@@ -78,7 +78,7 @@ def test_full_text_search(
         },
         dtype=pd.StringDtype(storage="python"),
     )
-    features = ["__hf_index_id", "text"]
+    features = [ROW_IDX_COLUMN, "text"]
     create_command_sql = (
         f"CREATE OR REPLACE TABLE data AS SELECT nextval('serial') AS {ROW_IDX_COLUMN}, * FROM sample_df"
     )
